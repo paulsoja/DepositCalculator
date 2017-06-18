@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DepositCalculator</string>
+
+    <string name="income_deposit_data_Sum">Сумма вклада</string>
+    <string name="income_deposit_data_Refill">Сумма пополнения</string>
+    <string name="income_deposit_data_Percent">Годовая % ставка</string>
+    <string name="income_deposit_data_TimeInterval">Срок, месяцев</string>
+    
+</resources>
