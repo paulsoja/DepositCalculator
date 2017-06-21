@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context="com.paulsoja.depositcalculator.MainActivity">
 
     <fragment
@@ -12,13 +12,15 @@
         android:name="com.paulsoja.depositcalculator.InputDepositDataFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         tools:layout="@layout/fragment_input_deposit_data" />
 
     <fragment
         android:id="@+id/Fragment_viewResultDeposit"
         android:name="com.paulsoja.depositcalculator.ViewResultDepositFragment"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_view_result_deposit"/>
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_view_result_deposit" />
 
 </LinearLayout>
