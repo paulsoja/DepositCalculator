@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/listview_result_deposit_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"/>
+
+    <TextView
+        android:id="@+id/listview_result_deposit_sum_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/listview_result_deposit_number"
+        android:text="2"/>
+
+    <TextView
+        android:id="@+id/listview_result_deposit_sum_refill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/listview_result_deposit_sum_start"
+        android:text="3"/>
+
+    <TextView
+        android:id="@+id/listview_result_deposit_profit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/listview_result_deposit_sum_refill"
+        android:text="4"/>
+
+    <TextView
+        android:id="@+id/listview_result_deposit_sum_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/listview_result_deposit_profit"
+        android:text="5"/>
+
+</RelativeLayout>
