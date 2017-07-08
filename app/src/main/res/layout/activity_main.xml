@@ -7,11 +7,18 @@
     android:orientation="vertical"
     tools:context="com.paulsoja.depositcalculator.MainActivity">
 
-    <fragment
+    <!--<fragment
         android:id="@+id/Fragment_inputDepositData"
         android:name="com.paulsoja.depositcalculator.InputDepositDataFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_input_deposit_data" />
+        tools:layout="@layout/fragment_input_deposit_data" />-->
+
+    <fragment
+        android:id="@+id/Fragment_viewResultDeposit"
+        android:name="com.paulsoja.depositcalculator.ViewResultDepositFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_view_result_deposit" />
 
 </LinearLayout>
