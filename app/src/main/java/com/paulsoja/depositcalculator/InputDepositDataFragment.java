@@ -1,11 +1,8 @@
 package com.paulsoja.depositcalculator;
 
-import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +36,6 @@ public class InputDepositDataFragment extends Fragment implements View.OnClickLi
     @Override
     public void onClick(View v) {
         ViewResultDepositFragment fragment = new ViewResultDepositFragment();
-        getFragmentManager().beginTransaction().replace(R.id.Fragment_viewResultDeposit, fragment);
+        getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
     }
 }
