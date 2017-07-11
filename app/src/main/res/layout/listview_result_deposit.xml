@@ -6,36 +6,41 @@
 
     <TextView
         android:id="@+id/listview_result_deposit_number"
+        android:layout_marginLeft="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"/>
+        android:text="11"/>
 
     <TextView
+        android:layout_marginLeft="5dp"
         android:id="@+id/listview_result_deposit_sum_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/listview_result_deposit_number"
-        android:text="2"/>
+        android:text="22"/>
 
     <TextView
+        android:layout_marginLeft="5dp"
         android:id="@+id/listview_result_deposit_sum_refill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/listview_result_deposit_sum_start"
-        android:text="3"/>
+        android:text="33"/>
 
     <TextView
+        android:layout_marginLeft="5dp"
         android:id="@+id/listview_result_deposit_profit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/listview_result_deposit_sum_refill"
-        android:text="4"/>
+        android:text="44"/>
 
     <TextView
+        android:layout_marginLeft="5dp"
         android:id="@+id/listview_result_deposit_sum_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/listview_result_deposit_profit"
-        android:text="5"/>
+        android:text="55"/>
 
 </RelativeLayout>

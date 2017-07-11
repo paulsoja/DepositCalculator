@@ -6,8 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * Created by Paul Soja on 20.06.2017.
@@ -15,15 +16,25 @@ import android.widget.ListView;
 
 public class ViewResultDepositFragment extends Fragment {
 
-    String[] items = {"one", "two", "three"};
+    ViewResultItems viewResultItems = new ViewResultItems();
+    ViewResultDepositAdapter adapter;
+    ArrayList<ViewResultItems> list = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view_result_deposit, container, false);
         ListView listView = (ListView) view.findViewById(R.id.listview_result_deposit);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, items);
-        listView.setAdapter(arrayAdapter);
+        fillData();
+        adapter = new ViewResultDepositAdapter(getContext(), list);
+        listView.setAdapter(adapter);
         return view;
+    }
+
+    private void fillData() {
+        list.add(new ViewResultItems(35, viewResultItems.getSumStart(),
+                viewResultItems.getSumRefill(),
+                viewResultItems.getProfit(),
+                viewResultItems.getSumEnd()));
     }
 }
