@@ -5,5 +5,16 @@
     <string name="income_deposit_data_Refill">Сумма пополнения</string>
     <string name="income_deposit_data_Percent">Годовая % ставка</string>
     <string name="income_deposit_data_TimeInterval">Срок, месяцев</string>
+    <string name="income_deposit_data_CapitalizationName">Капитализация</string>
+
+    <string name="button_schedule">График</string>
+
+
+    <string-array name="spinner_capitalization">
+        <item>В конце срока</item>
+        <item>Ежемесячная</item>
+        <item>Ежеквартальная</item>
+        <item>Ежегодная</item>
+    </string-array>
     
 </resources>

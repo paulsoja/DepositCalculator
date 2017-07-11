@@ -1,11 +1,27 @@
 <resources>
 
+    <color name="primary">#E6E6E6</color>
+
+    <color name="App.Primary">@color/primary</color>
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/App.Primary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="App" />
+    
+    <style name="App.LayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/layout_shape_style</item>
+        <item name="android:layout_marginRight">@dimen/layout_padding</item>
+        <item name="android:layout_marginLeft">@dimen/layout_padding</item>
+        <item name="android:layout_marginTop">@dimen/layout_padding</item>
+        <item name="android:layout_marginBottom">@dimen/layout_padding</item>
     </style>
 
 </resources>
