@@ -1,5 +1,7 @@
 package com.paulsoja.depositcalculator;
 
+import android.os.Bundle;
+
 import java.math.BigDecimal;
 
 /**
@@ -22,6 +24,22 @@ public class ViewResultItems {
         this.sumRefill = sumRefill;
         this.profit = profit;
         this.sumEnd = sumEnd;
+    }
+
+    public ViewResultItems(Bundle data) {
+        sumStart = BundleUtil.getDecimal(data, "sumStart");
+        sumRefill = BundleUtil.getDecimal(data, "sumRefill");
+        profit = BundleUtil.getDecimal(data, "profit");
+        sumEnd = BundleUtil.getDecimal(data, "sumEnd");
+    }
+
+    public Bundle serialize() {
+        Bundle data = new Bundle();
+        BundleUtil.put(data, "sumStart", sumStart);
+        BundleUtil.put(data, "sumRefill", sumRefill);
+        BundleUtil.put(data, "profit", profit);
+        BundleUtil.put(data, "sumEnd", sumEnd);
+        return data;
     }
 
     public int getNumber() {
