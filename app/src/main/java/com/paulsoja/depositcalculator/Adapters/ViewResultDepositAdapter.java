@@ -1,4 +1,4 @@
-package com.paulsoja.depositcalculator;
+package com.paulsoja.depositcalculator.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.paulsoja.depositcalculator.R;
+import com.paulsoja.depositcalculator.Models.ViewResultItems;
 
 import java.util.ArrayList;
 

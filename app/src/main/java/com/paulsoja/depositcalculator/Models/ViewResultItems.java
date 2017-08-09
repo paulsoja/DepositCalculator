@@ -1,6 +1,8 @@
-package com.paulsoja.depositcalculator;
+package com.paulsoja.depositcalculator.Models;
 
 import android.os.Bundle;
+
+import com.paulsoja.depositcalculator.Utils.BundleUtil;
 
 import java.math.BigDecimal;
 
