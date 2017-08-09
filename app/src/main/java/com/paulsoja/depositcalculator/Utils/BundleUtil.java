@@ -1,4 +1,4 @@
-package com.paulsoja.depositcalculator;
+package com.paulsoja.depositcalculator.Utils;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.paulsoja.depositcalculator;
+package com.paulsoja.depositcalculator.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.paulsoja.depositcalculator.R;
+import com.paulsoja.depositcalculator.Utils.ConvertUtil;
+import com.paulsoja.depositcalculator.Models.ViewResultItems;
 
 /**
  * Created by Paul Soja on 20.06.2017.
