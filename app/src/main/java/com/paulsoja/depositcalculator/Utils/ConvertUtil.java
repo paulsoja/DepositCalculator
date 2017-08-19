@@ -11,11 +11,19 @@ import java.math.BigDecimal;
 public class ConvertUtil {
 
     public static BigDecimal bigDecimalFromEt(EditText text) {
-        return new BigDecimal(text.getText().toString());
+        if (text.getText().toString().isEmpty()) {
+            return BigDecimal.ZERO;
+        } else {
+            return new BigDecimal(text.getText().toString());
+        }
     }
 
     public static int intFromEt(EditText text) {
-        return Integer.parseInt(text.getText().toString());
+        if (text.getText().toString().isEmpty()) {
+            return 0;
+        } else {
+            return Integer.parseInt(text.getText().toString());
+        }
     }
 
 }

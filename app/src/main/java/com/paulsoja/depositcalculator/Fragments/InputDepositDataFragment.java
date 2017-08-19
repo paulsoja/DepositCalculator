@@ -3,6 +3,8 @@ package com.paulsoja.depositcalculator.Fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,15 +19,13 @@ import com.paulsoja.depositcalculator.R;
 import com.paulsoja.depositcalculator.Utils.ConvertUtil;
 import com.paulsoja.depositcalculator.Models.ViewResultItems;
 
+import java.math.BigDecimal;
+
 /**
  * Created by Paul Soja on 20.06.2017.
  */
 
-public class InputDepositDataFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener{
-
-    public static final String KEY_ITEMS = "KEY_ITEMS";
-
-    private ViewResultItems viewResultItems;
+public class InputDepositDataFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private Spinner spinner;
     private Button button;
@@ -33,9 +33,9 @@ public class InputDepositDataFragment extends Fragment implements View.OnClickLi
     private EditText etSumRefill;
     private EditText etProfit;
     private EditText etInterval;
-    private TextView textView1;
-    private TextView textView2;
-    private TextView textView3;
+    TextView txtSumEnd;
+    TextView txtProfit;
+    TextView txtSumWithProfit;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,24 +52,22 @@ public class InputDepositDataFragment extends Fragment implements View.OnClickLi
         etSumRefill = (EditText) view.findViewById(R.id.etSumRefill);
         etProfit = (EditText) view.findViewById(R.id.etProfit);
         etInterval = (EditText) view.findViewById(R.id.etInterval);
-        textView1 = (TextView) view.findViewById(R.id.textView1);
-        textView2 = (TextView) view.findViewById(R.id.textView2);
-        textView3 = (TextView) view.findViewById(R.id.textView3);
+        txtSumEnd = (TextView) view.findViewById(R.id.textView1);
+        txtProfit = (TextView) view.findViewById(R.id.textView2);
+        txtSumWithProfit = (TextView) view.findViewById(R.id.textView3);
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getContext(), R.array.spinner_capitalization, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
+        etSumStart.addTextChangedListener(watcher);
+        etSumRefill.addTextChangedListener(watcher);
+        etProfit.addTextChangedListener(watcher);
+        etInterval.addTextChangedListener(watcher);
+
         button.setOnClickListener(this);
         return view;
-    }
-
-    public void fillData() {
-        viewResultItems.setSumStart(ConvertUtil.bigDecimalFromEt(etSumStart));
-        viewResultItems.setSumRefill(ConvertUtil.bigDecimalFromEt(etSumRefill));
-        viewResultItems.setProfit(ConvertUtil.bigDecimalFromEt(etProfit));
-        int interval = ConvertUtil.intFromEt(etInterval);
     }
 
     @Override
@@ -91,11 +89,43 @@ public class InputDepositDataFragment extends Fragment implements View.OnClickLi
         } else if (position == 3) {
             int noCapitalization = 0;
         }
-        textView1.setText(String.valueOf(yearCapitalization));
+        //textView1.setText(String.valueOf(yearCapitalization));
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    public void getCalculate() {
+        ViewResultItems items = new ViewResultItems();
+        items.setSumStart(ConvertUtil.bigDecimalFromEt(etSumStart));
+        items.setSumRefill(ConvertUtil.bigDecimalFromEt(etSumRefill));
+        items.setProfit(ConvertUtil.bigDecimalFromEt(etProfit));
+        int interval = ConvertUtil.intFromEt(etInterval);
+
+        BigDecimal resultSumWithRefill = BigDecimal.ZERO;
+        for (int i = 0; i < interval; i++) {
+            resultSumWithRefill = resultSumWithRefill.add(items.getSumRefill());
+        }
+        resultSumWithRefill = resultSumWithRefill.add(items.getSumStart());
+        txtSumEnd.setText(String.valueOf(resultSumWithRefill));
+    }
+
+    TextWatcher watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            getCalculate();
+        }
+    };
 }
