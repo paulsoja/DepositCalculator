@@ -7,6 +7,10 @@
     <string name="income_deposit_data_TimeInterval">Срок, месяцев</string>
     <string name="income_deposit_data_CapitalizationName">Капитализация</string>
 
+    <string name="income_deposit_data_OwnSumView">Сумма без процентов</string>
+    <string name="income_deposit_data_PercentView">Начисленные проценты</string>
+    <string name="income_deposit_data_OwnSumWithPercent">Общая сумма</string>
+
     <string name="button_schedule">График</string>
 
 

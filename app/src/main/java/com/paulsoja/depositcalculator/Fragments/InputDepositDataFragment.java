@@ -33,9 +33,11 @@ public class InputDepositDataFragment extends Fragment implements View.OnClickLi
     private EditText etSumRefill;
     private EditText etProfit;
     private EditText etInterval;
-    TextView txtSumEnd;
-    TextView txtProfit;
-    TextView txtSumWithProfit;
+    private TextView txtSumEnd;
+    private TextView txtProfit;
+    private TextView txtSumWithProfit;
+
+    int capitalization;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -79,17 +81,15 @@ public class InputDepositDataFragment extends Fragment implements View.OnClickLi
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String[] chooseItem = getResources().getStringArray(R.array.spinner_capitalization);
-        int yearCapitalization = 10;
         if (position == 0) {
-            yearCapitalization = 12;
+            capitalization = 12;
         } else if (position == 1) {
-            int quarterCapitalization = 3;
+            capitalization = 3;
         } else if (position == 2) {
-            int monthCapitalization = 1;
+            capitalization = 1;
         } else if (position == 3) {
-            int noCapitalization = 0;
+            capitalization = 0;
         }
-        //textView1.setText(String.valueOf(yearCapitalization));
     }
 
     @Override
